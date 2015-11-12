@@ -1,0 +1,30 @@
+body{
+    margin:0;
+    font-family:"Cooper";
+    font-size:15px;
+}
+#sence{
+    /* border:1px solid black; */
+    width:1200px;
+    margin:30px auto;
+    position:relative;
+}
+#sence:after{
+    content:" ";
+    display:block;
+    height:0;
+    clear:both;
+}
+.puke{
+    float:left;
+    width:182px;
+    height:248px;
+    margin:3px;
+    text-align:left;
+    font-size:28px;
+    padding-left:8px;
+    padding-top:6px;
+}
+.clear{
+    clear:both;
+}
