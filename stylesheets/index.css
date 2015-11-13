@@ -2,21 +2,47 @@ body{
     margin:0;
     font-family:"Cooper";
     font-size:15px;
+    background:url(../images/pageBackground.png);
 }
 #sence{
     /* border:1px solid black; */
-    width:1200px;
+    width:1470px;
+    height:1020px;
     margin:30px auto;
     position:relative;
 }
-#sence:after{
-    content:" ";
-    display:block;
-    height:0;
-    clear:both;
+#change{
+    width:100px;
+    height:50px;
+    border:1px solid black;
+    position:absolute;
+    bottom:150px;
+    left:685px;
+}
+#re-change{
+    width:100px;
+    height:50px;
+    border:1px solid black;
+    position:absolute;
+    bottom:60px;
+    left:685px;
+}
+#change-place{
+    width:190px;
+    height:254px;
+    position:absolute;
+    right:230px;
+    bottom:10px;
+}
+#left-place{
+    width:190px;
+    height:254px;
+    position:absolute;
+    left:210px;
+    bottom:10px;
 }
 .puke{
-    float:left;
+    position:absolute;
     width:182px;
     height:248px;
     margin:3px;
