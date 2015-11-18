@@ -9,19 +9,13 @@ window.onload = function(){
       rightSet = $('right-set'),
       previous;
 
-  var generatePoker = function(){
-    var colors = ['ac','ad','ah','as'],
-        dict  = {}, poker = [];
-    while( poker.length !== 52 ){
-      var  color  =  colors[ Math.floor(Math.random()*4) ];
-      var  number =  Math.floor( Math.random()*13 + 1 );
-      var key = color + number;
-      if( !dict[key] ){
-        poker.push( {color:color,number:number} );
-        dict[key] = true;
-      }
+  var isWin = function(){
+    var pyramids = document.getElementsByClassName('pyramid');
+    if(pyramids.length == 0){
+      return true;
     }
-    return poker;
+    //TODO
+    return false;
   };
   var isFree = function(el){
     var x = Number( el.id.split('_')[0] ),
@@ -74,13 +68,28 @@ window.onload = function(){
     };
   })();
   sence.onmousedown = function(e){e.preventDefault();};
+
+  var generatePoker = function(){
+    var colors = ['ac','ad','ah','as'],
+        dict  = {}, poker = [];
+    while( poker.length !== 52 ){
+      var  color  =  colors[ Math.floor(Math.random()*4) ];
+      var  number =  Math.floor( Math.random()*13 + 1 );
+      var key = color + number;
+      if( !dict[key] ){
+        poker.push( {color:color,number:number} );
+        dict[key] = true;
+      }
+    }
+    return poker;
+  };
   (function(){
     var index = 0, poker = generatePoker(), el,
         guize = {1:'A',11:'J',12:'Q',13:'K'};
     for ( var i = 0;  i < 7;  i++){
       for ( var j = 0;  j < i+1;  j++){
         el = document.createElement('div');
-        el.setAttribute('class','poker');
+        el.setAttribute('class','poker pyramid');
         el.setAttribute('id',i + '_' + j );
         el.setAttribute('data',poker[index].number);
         el.style.top = 50*i + 'px';
