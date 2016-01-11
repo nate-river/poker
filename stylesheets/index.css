@@ -1,8 +1,12 @@
 body{
     margin:0;
-    font-family:"Arial";
-    background-image:radial-gradient(#222,#333);
-    font-size:14px;
+    /* font-family:"Curlz MT"; */
+    /* font-family:"Jazz LET"; */
+    font-family:"Mistral";
+    /* font-family:"Party LET"; */
+    font-size:18px;
+    background:#363636;
+    color:white;
 }
 *{
     transition:all .3s ease;
@@ -19,11 +23,12 @@ body{
     width:90px;
     height:120px;
     text-align:center;
-    line-height:80px;
+    line-height:50px;
     background-size:cover;
-    box-shadow: 0 1px 4px black;
-    color:white;
-    border-radius:5px;
+    box-shadow: 1px 1px 3px black;
+    font-weight:800;
+
+    border-radius:3px;
     opacity:0.95;
 }
 .ac{
