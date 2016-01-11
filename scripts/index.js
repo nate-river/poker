@@ -25,12 +25,14 @@ window.onload = function(){
     if( $(childLeftId) || $(childRightId) ) return false;
     return true;
   };
+
   sence.onclick = function(e){
     var el = e.target;
     if (el == this || el==moveLeft
         || el == moveRight || el.hasAttribute('id') && !isFree(el) ){
+
       if(previous){
-        previous.style.border = 'none';
+        previous.classList.remove('cur');
         previous = null;
       }
       return;
@@ -47,9 +49,9 @@ window.onload = function(){
           return;
         }
     if(previous){
-      previous.style.border = 'none';
+      previous.classList.remove('cur');
     }
-    el.style.border = '2px solid #039219';
+    el.classList.add('cur');
     previous = el;
   };
 
@@ -96,8 +98,7 @@ window.onload = function(){
         el.style.left = (6-i)*60 + j*120 + 'px';
         el.innerHTML = guize[ poker[index].number ]?
           guize[poker[index].number]:poker[index].number;
-        el.style.backgroundImage = 'url(./images/western_'+
-          poker[index++].color + '.png)';
+	el.classList.add(poker[index++].color);
         sence.appendChild(el);
       }
     }
@@ -107,8 +108,7 @@ window.onload = function(){
       el.setAttribute('data',poker[index].number);
       el.innerHTML = guize[ poker[index].number ]?
         guize[poker[index].number]:poker[index].number;
-      el.style.backgroundImage = 'url(./images/western_'+
-        poker[index++].color + '.png)';
+      el.classList.add(poker[index++].color);
       leftSet.appendChild(el);
     }
   })();
